@@ -15,9 +15,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class ConversorApp {
-    private static final String EXCHANGE_RATE_API_URL = "https://v6.exchangerate-api.com/v6/0efd611462de440957e237a8/latest/USD";
-
-    public static void main(String[] args) throws IOException, InterruptedException {
+       public static void main(String[] args) throws IOException, InterruptedException {
         Scanner sc = new Scanner(System.in);
 
         Gson gson = new GsonBuilder()
@@ -25,8 +23,8 @@ public class ConversorApp {
                 .setPrettyPrinting()
                 .create();
 
-
-        String endereco = "https://v6.exchangerate-api.com/v6/ba65798fa99dc0cbe314d619/latest/USD";
+        //adicionar a sua url aqui 
+        String endereco = "https://v6.exchangerate-api.com/v6//latest/USD";
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(endereco)).build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
